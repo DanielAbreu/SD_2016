@@ -1,0 +1,2 @@
+C:\Users\Dani Abreu\Documents\Engenharia Informática de computadores\3º Ano\5º Semestre\PC\Serie 3\Super\Super\bin\Debug\Super.exe.config
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\Trabalho 1\Super\Super\bin\Debug\Super.exe.config

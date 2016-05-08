@@ -1,0 +1,27 @@
+Criar no App.config as configurações necessárias:
+- Path para ficheiro com stocks
+- Port
+(Mais coisas que não sei de momento)
+
+
+Projeto Super
+- Este projeto terá a implementação das funcionalidades de cada super
+- Funcionalidades: 
+. Registar-se na zona mais próxima (Pelo que estive a ver será atraves do método "RegisterWellKnownServiceType")
+. Criar o seu StockManager
+. DesRegistar-se da zona
+. Obter o seu stock
+. Requesitar o stock de um produto
+(e mais coisas que não me tenha aprecebido)
+
+Projeto Zone
+- Este projeto terá a implementação das funcionalidades de cada Zona
+- Funcionalidades:
+. Obter o registo de um Super
+. Mostrar os stocks dos super registados nas Zonas
+. Passar a informação dos super ao proximo servidor de zona
+(e mais coisas que não me tenha aprecebido)
+
+Projeto ISuper
+- Este projeto terá as interfaces com os contratos entre o projeto Super e Zone
+- Será gerado um DLL deste projeto, e será posteriormente adicionado como referencia a cada um dos outros projetos
