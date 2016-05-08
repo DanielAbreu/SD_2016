@@ -1,3 +1,10 @@
 C:\Users\Dani Abreu\Documents\Engenharia Informática de computadores\3º Ano\5º Semestre\PC\Serie 3\Super\Super\bin\Debug\Super.exe.config
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\Trabalho 1\Super\Super\bin\Debug\Super.exe.config
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\bin\Debug\Super.exe.config
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\bin\Debug\Super.exe
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\bin\Debug\Super.pdb
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.csprojResolveAssemblyReference.cache
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.Properties.Resources.resources
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.csproj.GenerateResource.Cache
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.exe
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.pdb

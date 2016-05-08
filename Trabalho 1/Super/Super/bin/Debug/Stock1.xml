@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Stock>
+    <Item>
+        <Name>Atum</Name>
+        <Qtd>10</Qtd>
+    </Item>
+    <Item>
+        <Name>Batatas</Name>
+        <Qtd>15</Qtd>
+    </Item>
+    <Item>
+        <Name>Arroz</Name>
+        <Qtd>4</Qtd>
+    </Item>
+    <Item>
+        <Name>Carne de Novilho</Name>
+        <Qtd>30</Qtd>
+    </Item>
+    <Item>
+        <Name>Peixe Espada</Name>
+        <Qtd>13</Qtd>
+    </Item>
+    <Item>
+        <Name>Sardinhas</Name>
+        <Qtd>5</Qtd>
+    </Item>
+    <Item>
+        <Name>Esparguete</Name>
+        <Qtd>45</Qtd>
+    </Item>
+    <Item>
+        <Name>Tomate</Name>
+        <Qtd>58</Qtd>
+    </Item>
+</Stock>
