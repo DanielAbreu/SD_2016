@@ -9,9 +9,12 @@ Projeto Super
 - Funcionalidades: 
 . Registar-se na zona mais próxima (Pelo que estive a ver será atraves do método "RegisterWellKnownServiceType")
 . Criar o seu StockManager
-. DesRegistar-se da zona
+. "Desregistar-se" da zona
 . Obter o seu stock
 . Requesitar o stock de um produto
+. Criar duas partes de ambiente gráfico:
+      - Uma para interagir, com a possibilidade de Registar/"Desregistar" na zona, obter stocks de produtos e mostrar os resultados
+      - Outra com a actividade do StockManager
 (e mais coisas que não me tenha aprecebido)
 
 Projeto Zone
@@ -25,3 +28,6 @@ Projeto Zone
 Projeto ISuper
 - Este projeto terá as interfaces com os contratos entre o projeto Super e Zone
 - Será gerado um DLL deste projeto, e será posteriormente adicionado como referencia a cada um dos outros projetos
+
+Duvidas:
+- Como é que os Super serão identificados no sistema?
