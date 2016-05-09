@@ -8,3 +8,6 @@ C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Supe
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.csproj.GenerateResource.Cache
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.exe
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.exe.config
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.pdb
