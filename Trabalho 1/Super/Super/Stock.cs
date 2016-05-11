@@ -1,12 +1,16 @@
-﻿using System;
+﻿using ISuper;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Super
 {
-    public class Stock
+    public class SuperStock
     {
         private IEnumerable<Item> _Stock;
         public IEnumerable<Item> Stock
