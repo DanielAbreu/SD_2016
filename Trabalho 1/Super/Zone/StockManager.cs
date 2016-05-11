@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IZone;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
@@ -9,10 +10,16 @@ using System.Xml.Serialization;
 
 namespace ISuper
 {
-    public class StockManager :
+    public class StockManager : MarshalByRefObject, IStockManager
     {
-        
+        public IEnumerable<Item> GetLocalStock()
+        {
+            throw new NotImplementedException();
+        }
 
-
+        public IEnumerable<Item> GetRemoteStock()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
