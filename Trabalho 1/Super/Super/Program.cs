@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.Remoting.Channels.Http;
 using System.Runtime.Remoting.Channels;
+using System.Runtime.Remoting;
 namespace Super
 {
     static class Program

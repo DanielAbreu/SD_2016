@@ -12,16 +12,30 @@ namespace Zone
 {
     class Program
     {
+        static List<StockManager> managers;
         static void Main(string[] args)
         {
+            managers = null;
             HttpChannel ch = new HttpChannel(1234);
             ChannelServices.RegisterChannel(ch, false);
             RemotingConfiguration.RegisterWellKnownServiceType(
                 typeof(StockManager),
-                "Stocks.xml",
+                "Stock1.xml",
                 WellKnownObjectMode.Singleton
             );
             Console.WriteLine("Waiting Request...");
+        }
+        static void Register(StockManager sm)
+        {
+
+        }
+        static void Unregister()
+        {
+
+        }
+        static void LoadStock()
+        {
+
         }
     }
 }
