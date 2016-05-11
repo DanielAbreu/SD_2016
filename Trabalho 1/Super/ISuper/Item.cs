@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Super
+namespace ISuper
 {
     [Serializable()]
     public class Item

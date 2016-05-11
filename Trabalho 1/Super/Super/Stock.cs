@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace Super
 {
-    public class StockManager
+    public class Stock
     {
         private IEnumerable<Item> _Stock;
         public IEnumerable<Item> Stock
         {
             get
             {
-                if(_Stock == null)
+                if (_Stock == null)
                 {
                     _Stock = LoadStock();
                 }
@@ -49,7 +46,5 @@ namespace Super
 
             return stock.Items;
         }
-
-
     }
 }
