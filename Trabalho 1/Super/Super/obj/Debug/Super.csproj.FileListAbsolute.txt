@@ -14,3 +14,13 @@ C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.csprojResolveAssemblyReference.cache
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.Properties.Resources.resources
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.csproj.GenerateResource.Cache
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.exe.config
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\ISuper.dll
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\ISuper.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.csprojResolveAssemblyReference.cache
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.Properties.Resources.resources
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.csproj.GenerateResource.Cache
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.pdb

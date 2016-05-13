@@ -9,8 +9,8 @@ namespace IZone
 {
     public interface IStockManager
     {
-        IEnumerable<Item> GetLocalStock();
-        IEnumerable<Item> GetRemoteStock();
+        IEnumerable<Item> GetLocalStock(string it);
+        IEnumerable<Item> GetRemoteStock(string it);
     }
 
     public interface IZone

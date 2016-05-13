@@ -7,19 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.Runtime.Remoting.Channels.Http;
+using System.Runtime.Remoting.Channels;
+using System.Runtime.Remoting;
+using Zone;
 
 namespace ISuper
 {
     public class StockManager : MarshalByRefObject, IStockManager
     {
-        public IEnumerable<Item> GetLocalStock()
+        public Program zo;
+        public StockManager(Program zo)
         {
-            throw new NotImplementedException();
+            this.zo = zo;
         }
 
-        public IEnumerable<Item> GetRemoteStock()
+        public IEnumerable<Item> GetLocalStock(string it)
         {
-            throw new NotImplementedException();
+            return zo.LoadStock(it);
+        }
+
+        public IEnumerable<Item> GetRemoteStock(string it)
+        {
+            HttpChannel ch = new HttpChannel(1234);
+            ChannelServices.RegisterChannel(ch, false);
+            RemotingConfiguration.RegisterWellKnownServiceType(
+                typeof(StockManager),
+                "Stock1.xml",
+                WellKnownObjectMode.Singleton
+            );
+            return null;
         }
     }
 }
