@@ -24,9 +24,10 @@ namespace Zone
             );
             Console.WriteLine("Waiting Request...");
         }
-        static void Register(StockManager sm, IEnumerable<Item> items)
+        public void Register(StockManager sm, IEnumerable<Item> items)
         {
             managers.Add(sm);
+            sm.zo = this;
             foreach (Item it in items)
             {
                 if (stockCache.ContainsKey(it.Name)) {
@@ -41,8 +42,9 @@ namespace Zone
                 }
             }
         }
-        static void Unregister(StockManager sm)
+        public void Unregister(StockManager sm)
         {
+            sm.zo = null;
             managers.Remove(sm);
         }
         public IEnumerable<Item> LoadStock(string name)

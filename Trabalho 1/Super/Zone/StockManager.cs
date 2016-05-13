@@ -17,10 +17,6 @@ namespace ISuper
     public class StockManager : MarshalByRefObject, IStockManager
     {
         public Program zo;
-        public StockManager(Program zo)
-        {
-            this.zo = zo;
-        }
 
         public IEnumerable<Item> GetLocalStock(string it)
         {
