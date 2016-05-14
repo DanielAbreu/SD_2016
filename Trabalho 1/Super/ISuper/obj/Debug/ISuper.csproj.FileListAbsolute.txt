@@ -12,4 +12,3 @@ C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\ISuper\bin\Debug\ISuper.pdb
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\ISuper\obj\Debug\ISuper.csprojResolveAssemblyReference.cache
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\ISuper\obj\Debug\ISuper.dll
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\ISuper\obj\Debug\ISuper.pdb
-C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\obj\Debug\ISuper.csprojResolveAssemblyReference.cache

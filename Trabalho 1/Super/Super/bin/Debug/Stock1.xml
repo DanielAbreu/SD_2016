@@ -1,34 +1,42 @@
 <?xml version="1.0"?>
 <Stock>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Atum</Name>
         <Qtd>10</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Batatas</Name>
         <Qtd>15</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Arroz</Name>
         <Qtd>4</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Carne de Novilho</Name>
         <Qtd>30</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Peixe Espada</Name>
         <Qtd>13</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Sardinhas</Name>
         <Qtd>5</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Esparguete</Name>
         <Qtd>45</Qtd>
     </Item>
     <Item>
+        <SuperID>1</Qtd>
         <Name>Tomate</Name>
         <Qtd>58</Qtd>
     </Item>

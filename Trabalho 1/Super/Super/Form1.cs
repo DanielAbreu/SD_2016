@@ -72,7 +72,7 @@ namespace Super
                 return;
             }
 
-            zone.Unregister();
+            zone.Unregister(stockManager);
         }
 
         private void buttonFindStock_Click(object sender, EventArgs e)
@@ -94,7 +94,20 @@ namespace Super
             localStock = stockManager.GetLocalStock(itemToSearch);
             remoteStock = stockManager.GetRemoteStock(itemToSearch);
 
-            //Insert stock in listView
+
+            if (localStock != null)
+            {
+                listViewLocal.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
+                listViewLocal.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
+                listViewLocal.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
+            }
+
+            if (localStock != null)
+            {
+                listViewRemote.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
+                listViewRemote.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
+                listViewRemote.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
+            }
         }
     }
 }

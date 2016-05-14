@@ -9,14 +9,18 @@ namespace ISuperInterfaces
 {
     public interface IStockManager
     {
+        IZone zone { get; set; }
+
         IEnumerable<Item> GetLocalStock(string it);
         IEnumerable<Item> GetRemoteStock(string it);
     }
 
     public interface IZone
     {
-        void Register(IStockManager sm, IEnumerable<Item> stock);
+        void Register(IStockManager stockManager, IEnumerable<Item> stock);
 
-        void Unregister();
+        void Unregister(IStockManager stockManager);
+
+        IEnumerable<Item> GetItemStock(string item);
     }
 }

@@ -11,6 +11,8 @@ namespace ISuper
     public class Item
     {
         [XmlElement()]
+        public int SuperID { get; set; }
+        [XmlElement()]
         public string Name {get; set;}
         [XmlElement()]
         public int Qtd { get; set; }

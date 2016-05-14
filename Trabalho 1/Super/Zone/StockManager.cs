@@ -16,11 +16,11 @@ namespace ISuper
 {
     public class StockManager : MarshalByRefObject, IStockManager
     {
-        public Program zo;
+        public IZone zone { get; set; }
 
         public IEnumerable<Item> GetLocalStock(string it)
         {
-            return zo.LoadStock(it);
+            return zone.GetItemStock(it);
         }
 
         public IEnumerable<Item> GetRemoteStock(string it)
