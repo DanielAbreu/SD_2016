@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Channels.Http;
 using System.Runtime.Remoting;
 using ISuper;
 using System.Collections;
+using ISuperInterfaces;
 
 namespace Zone
 {
@@ -18,10 +19,17 @@ namespace Zone
             HttpChannel ch = new HttpChannel(1234);
             ChannelServices.RegisterChannel(ch, false);
             RemotingConfiguration.RegisterWellKnownServiceType(
-                typeof(StockManager),
-                "Stock1.xml",
+                typeof(IZone),
+                "zone",
                 WellKnownObjectMode.Singleton
             );
+
+            RemotingConfiguration.RegisterWellKnownServiceType(
+                typeof(IStockManager),
+                "stockmanger",
+                WellKnownObjectMode.SingleCall
+            );
+
             Console.WriteLine("Waiting Request...");
         }
         public void Register(StockManager sm, IEnumerable<Item> items)

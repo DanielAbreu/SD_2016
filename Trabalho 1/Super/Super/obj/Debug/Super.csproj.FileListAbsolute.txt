@@ -24,3 +24,4 @@ C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.Properties.Re
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.csproj.GenerateResource.Cache
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.exe
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.pdb
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.SuperGI.resources
