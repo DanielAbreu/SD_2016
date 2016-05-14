@@ -17,6 +17,8 @@ namespace ISuperInterfaces
 
     public interface IZone
     {
+        int port { get; set; }
+
         void Register(IStockManager stockManager, IEnumerable<Item> stock);
 
         void Unregister(IStockManager stockManager);
