@@ -5,6 +5,5 @@ C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Supe
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Super\ISuper\obj\Debug\ISuper.pdb
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\bin\Debug\ISuper.dll
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\bin\Debug\ISuper.pdb
-C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\obj\Debug\ISuper.csprojResolveAssemblyReference.cache
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\obj\Debug\ISuper.dll
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\ISuper\obj\Debug\ISuper.pdb

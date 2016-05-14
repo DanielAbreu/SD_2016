@@ -7,3 +7,8 @@ C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD Git\SD_2016\Trabalho 1\Supe
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.csprojResolveAssemblyReference.cache
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.exe
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.pdb
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.exe.config
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.exe
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.pdb
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.dll
+C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.pdb
