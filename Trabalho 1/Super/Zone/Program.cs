@@ -37,7 +37,7 @@ namespace Zone
 
             RemotingConfiguration.RegisterWellKnownServiceType(
                 typeof(StockManager),
-                "stockmanger",
+                "stockmanager",
                 WellKnownObjectMode.SingleCall
             );
 
