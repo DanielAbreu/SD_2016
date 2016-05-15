@@ -13,6 +13,21 @@ namespace Zone
         private List<IStockManager> managers;
         private Dictionary<string, List<Item>> stockCache;
 
+        public int port;
+
+        int IZone.port
+        {
+            get
+            {
+                return port;
+            }
+
+            set
+            {
+                this.port = value;
+            }
+        }
+
         public Zone()
         {
             managers = new List<IStockManager>();

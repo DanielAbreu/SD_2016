@@ -41,7 +41,7 @@ namespace Zone
                 WellKnownObjectMode.SingleCall
             );
 
-            Console.WriteLine("Waiting Request...");
+            Console.WriteLine("Waiting Requests on port: "+port);
             Console.ReadLine();
         }
     }

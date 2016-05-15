@@ -25,7 +25,6 @@ namespace ISuper
 
         public IEnumerable<Item> GetRemoteStock(string it)
         {
-            IZone curr = zone;
             IEnumerable<Item> res = null;
             int startingPort = zone.port;
             IZone next = null;
@@ -36,20 +35,14 @@ namespace ISuper
                 next = (IZone)Activator.GetObject(typeof(IZone), 
                                                   string.Format("{0}/{1}", 
                                                   string.Format("http://localhost:", nextPort), "zone"));
-                zone = next;
-                if ((res = zone.GetItemStock(it)) != null) break;
+                if ((res = zone.GetItemStock(it)) != null)
+                {
+                    Console.WriteLine("Successfully retrieved stocks remotely for " + it);
+                    return res;
+                }
             }
-            curr = zone;
-            if (res == null)
-            {
-                Console.WriteLine("Couldn't retrieve stocks for" + it + " remotely");
-                return null;
-            }
-            else
-            {
-                Console.WriteLine("Successfully retrieved stocks remotely for " + it);    
-                return res;
-            }
+            Console.WriteLine("Couldn't retrieve stocks for" + it + " remotely");
+            return null;
         }
     }
 }

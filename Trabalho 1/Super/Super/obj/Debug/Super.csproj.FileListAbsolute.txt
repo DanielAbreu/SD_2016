@@ -26,3 +26,7 @@ C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.exe
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.pdb
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Super\obj\Debug\Super.SuperGI.resources
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.exe.config
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\Super.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\bin\Debug\ISuper.dll
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Super\obj\Debug\Super.SuperGI.resources
