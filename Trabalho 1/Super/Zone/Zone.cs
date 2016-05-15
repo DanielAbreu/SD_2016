@@ -31,18 +31,17 @@ namespace Zone
             nextZone = (IZone)Activator.GetObject(typeof(IZone),
                                                   string.Format("{0}/{1}",
                                                   string.Format("http://localhost:", nextZonePort), "zone"));
-
         }
 
-        public void Register(IStockManager stockManager, IEnumerable<Item> stock)
+        public void Register(IStockManager stockManager, Item[] stock)
         {
+            Console.WriteLine("Registed entered");
             if (managers.Contains(stockManager))
             {
                 return;
             }
 
             managers.Add(stockManager);
-            stockManager.zone = this;
             foreach (Item it in stock)
             {
                 if (stockCache.ContainsKey(it.Name))
@@ -63,15 +62,16 @@ namespace Zone
         }
         public void Unregister(IStockManager stockManager)
         {
+            Console.WriteLine("Registed entered");
             if (!managers.Contains(stockManager))
             {
                 return;
             }
 
-            stockManager.zone = null;
             managers.Remove(stockManager);
 
             nextZone.Unregister(stockManager);
+            Console.WriteLine("Successfully Unregisted the StockManager");
         }
 
         public IEnumerable<Item> GetItemStock(string name)

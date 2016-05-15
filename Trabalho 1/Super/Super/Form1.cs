@@ -54,7 +54,7 @@ namespace Super
             }
 
             zone = (IZone)Activator.GetObject(typeof(IZone), string.Format("{0}/{1}", string.Format(url, port), "zone.soap"));
-            stockManager = (IStockManager)Activator.GetObject(typeof(IStockManager), string.Format("{0}/{1}", string.Format(url, port), "stockmanager.soap"));
+            stockManager = new StockManager();
             superStock = new SuperStock();
 
             zone.Register(stockManager, superStock.Stock);
@@ -96,8 +96,7 @@ namespace Super
                 return;
             }
 
-            localStock = stockManager.GetStock(itemToSearch);
-
+            localStock = zone.GetItemStock(itemToSearch);
 
             if (localStock != null)
             {

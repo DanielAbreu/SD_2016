@@ -32,12 +32,6 @@ namespace Zone
                 WellKnownObjectMode.Singleton
             );
 
-            RemotingConfiguration.RegisterWellKnownServiceType(
-                typeof(StockManager),
-                "stockmanager.soap",
-                WellKnownObjectMode.SingleCall
-            );
-
             Console.WriteLine("Waiting Requests on port: "+port);
             Console.ReadLine();
         }

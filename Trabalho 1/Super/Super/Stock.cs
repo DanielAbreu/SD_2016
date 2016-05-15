@@ -9,8 +9,8 @@ namespace Super
 {
     public class SuperStock
     {
-        private IEnumerable<Item> _Stock;
-        public IEnumerable<Item> Stock
+        private Item[] _Stock;
+        public Item[] Stock
         {
             get
             {
@@ -35,7 +35,7 @@ namespace Super
         }
 
 
-        private IEnumerable<Item> LoadStock()
+        private Item[] LoadStock()
         {
             Stock stock = null;
 
