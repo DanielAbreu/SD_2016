@@ -2,6 +2,7 @@
 using ISuperInterfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,15 @@ namespace Zone
         private List<IStockManager> managers;
         private Dictionary<string, List<Item>> stockCache;
 
-        public int port;
-
-        int IZone.port
+        private int nextZonePort
         {
             get
             {
-                return port;
-            }
-
-            set
-            {
-                this.port = value;
+                if (ConfigurationManager.AppSettings["nextPort"] == null)
+                {
+                    throw new ArgumentNullException("Key nextPort not present in App.config");
+                }
+                return Int32.Parse(ConfigurationManager.AppSettings["nextPort"]);
             }
         }
 
@@ -36,6 +34,11 @@ namespace Zone
 
         public void Register(IStockManager stockManager, IEnumerable<Item> stock)
         {
+            if (managers.Contains(stockManager))
+            {
+                return;
+            }
+
             managers.Add(stockManager);
             stockManager.zone = this;
             foreach (Item it in stock)
@@ -52,6 +55,13 @@ namespace Zone
                     stockCache.Add(it.Name, new List<Item> { it });
                 }
             }
+
+            IZone nextZone = (IZone)Activator.GetObject(typeof(IZone),
+                                                  string.Format("{0}/{1}",
+                                                  string.Format("http://localhost:", nextZonePort), "zone"));
+
+            nextZone.Register(stockManager, stock);
+            Console.WriteLine("Successfully Registed the StockManager");
         }
         public void Unregister(IStockManager stockManager)
         {

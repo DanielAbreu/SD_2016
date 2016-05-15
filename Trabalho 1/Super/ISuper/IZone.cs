@@ -11,14 +11,11 @@ namespace ISuperInterfaces
     {
         IZone zone { get; set; }
 
-        IEnumerable<Item> GetLocalStock(string it);
-        IEnumerable<Item> GetRemoteStock(string it);
+        IEnumerable<Item> GetStock(string it);
     }
 
     public interface IZone
     {
-        int port { get; set; }
-
         void Register(IStockManager stockManager, IEnumerable<Item> stock);
 
         void Unregister(IStockManager stockManager);

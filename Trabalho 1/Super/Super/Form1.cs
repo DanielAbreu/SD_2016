@@ -84,7 +84,6 @@ namespace Super
         private void buttonFindStock_Click(object sender, EventArgs e)
         {
             IEnumerable<Item> localStock;
-            IEnumerable<Item> remoteStock;
             string itemToSearch = textBoxItem.Text;
 
             if (itemToSearch == null)
@@ -97,22 +96,23 @@ namespace Super
                 return;
             }
 
-            localStock = stockManager.GetLocalStock(itemToSearch);
-            remoteStock = stockManager.GetRemoteStock(itemToSearch);
+            localStock = stockManager.GetStock(itemToSearch);
 
 
             if (localStock != null)
             {
-                listViewLocal.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
-                listViewLocal.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
-                listViewLocal.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
+                listViewStock.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
+                listViewStock.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
+                listViewStock.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
             }
-
-            if (localStock != null)
+            else
             {
-                listViewRemote.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
-                listViewRemote.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
-                listViewRemote.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
+                MessageBox.Show("Não existe stock disponivel para esse produto",
+                "Stock inexistente",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+                return;
             }
         }
     }
