@@ -23,6 +23,6 @@ namespace ISuper
     public class Stock
     {
         [XmlElement("Item")]
-        public List<Item> Items { get; set; }
+        public Item[] Items { get; set; }
     }
 }
