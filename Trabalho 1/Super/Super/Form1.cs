@@ -58,6 +58,12 @@ namespace Super
             stock = new Stock();
 
             zone.Register(stockManager, stock.Items);
+
+            MessageBox.Show(string.Format("Super registado na zona {0}", port),
+                "Super registado",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
         }
 
         private void buttonUnregister_Click(object sender, EventArgs e)
