@@ -10,6 +10,7 @@ namespace Zone
     {
         private List<IStockManager> managers;
         private Dictionary<string, List<Item>> stockCache;
+        private IZone nextZone;
 
         private int nextZonePort
         {
@@ -27,6 +28,10 @@ namespace Zone
         {
             managers = new List<IStockManager>();
             stockCache = new Dictionary<string, List<Item>>();
+            nextZone = (IZone)Activator.GetObject(typeof(IZone),
+                                                  string.Format("{0}/{1}",
+                                                  string.Format("http://localhost:", nextZonePort), "zone"));
+
         }
 
         public void Register(IStockManager stockManager, IEnumerable<Item> stock)
@@ -53,17 +58,20 @@ namespace Zone
                 }
             }
 
-            IZone nextZone = (IZone)Activator.GetObject(typeof(IZone),
-                                                  string.Format("{0}/{1}",
-                                                  string.Format("http://localhost:", nextZonePort), "zone"));
-
             nextZone.Register(stockManager, stock);
             Console.WriteLine("Successfully Registed the StockManager");
         }
         public void Unregister(IStockManager stockManager)
         {
+            if (!managers.Contains(stockManager))
+            {
+                return;
+            }
+
             stockManager.zone = null;
             managers.Remove(stockManager);
+
+            nextZone.Unregister(stockManager);
         }
 
         public IEnumerable<Item> GetItemStock(string name)

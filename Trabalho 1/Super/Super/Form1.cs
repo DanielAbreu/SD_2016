@@ -17,7 +17,7 @@ namespace Super
     {
         private IStockManager stockManager;
         private IZone zone;
-        private Stock stock;
+        private SuperStock superStock;
         private string _url;
         public string url
         {
@@ -55,9 +55,9 @@ namespace Super
 
             zone = (IZone)Activator.GetObject(typeof(IZone), string.Format("{0}/{1}", string.Format(url, port), "zone"));
             stockManager = (IStockManager)Activator.GetObject(typeof(IStockManager), string.Format("{0}/{1}", string.Format(url, port), "stockmanager"));
-            stock = new Stock();
+            superStock = new SuperStock();
 
-            zone.Register(stockManager, stock.Items);
+            zone.Register(stockManager, superStock.Stock);
 
             MessageBox.Show(string.Format("Super registado na zona {0}", port),
                 "Super registado",
