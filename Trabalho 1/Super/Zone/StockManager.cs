@@ -25,13 +25,23 @@ namespace ISuper
 
         public IEnumerable<Item> GetRemoteStock(string it)
         {
-            HttpChannel ch = new HttpChannel(1234);
-            ChannelServices.RegisterChannel(ch, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(
-                typeof(StockManager),
-                "Stock1.xml",
-                WellKnownObjectMode.Singleton
-            );
+            IEnumerable<Item> res = null;
+            int startingPort = zone.port;
+            IZone next = null;
+            while (next.port != startingPort)
+            {
+                if (ConfigurationManager.AppSettings["nextPort"] == null) break;
+                string nextPort = ConfigurationManager.AppSettings["nextPort"];
+                next = (IZone)Activator.GetObject(typeof(IZone), 
+                                                  string.Format("{0}/{1}", 
+                                                  string.Format("http://localhost:", nextPort), "zone"));
+                if ((res = zone.GetItemStock(it)) != null)
+                {
+                    Console.WriteLine("Successfully retrieved stocks remotely for " + it);
+                    return res;
+                }
+            }
+            Console.WriteLine("Couldn't retrieve stocks for" + it + " remotely");
             return null;
         }
     }

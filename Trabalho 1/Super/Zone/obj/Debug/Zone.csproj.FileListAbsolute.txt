@@ -12,3 +12,11 @@ C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.pdb
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.dll
 C:\Users\Dani Abreu\Desktop\Sistemas Distribuidos\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.csprojResolveAssemblyReference.cache
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\Zone.exe.config
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\Zone.exe
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\Zone.pdb
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\ISuper.dll
+C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\ISuper.pdb
