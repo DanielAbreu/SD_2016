@@ -31,13 +31,13 @@ namespace Zone
             ChannelServices.RegisterChannel(ch, false);
             RemotingConfiguration.RegisterWellKnownServiceType(
                 typeof(Zone),
-                "zone",
+                "zone.soap",
                 WellKnownObjectMode.Singleton
             );
 
             RemotingConfiguration.RegisterWellKnownServiceType(
                 typeof(StockManager),
-                "stockmanager",
+                "stockmanager.soap",
                 WellKnownObjectMode.SingleCall
             );
 

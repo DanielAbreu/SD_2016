@@ -53,8 +53,8 @@ namespace Super
                 return;
             }
 
-            zone = (IZone)Activator.GetObject(typeof(IZone), string.Format("{0}/{1}", string.Format(url, port), "zone"));
-            stockManager = (IStockManager)Activator.GetObject(typeof(IStockManager), string.Format("{0}/{1}", string.Format(url, port), "stockmanager"));
+            zone = (IZone)Activator.GetObject(typeof(IZone), string.Format("{0}/{1}", string.Format(url, port), "zone.soap"));
+            stockManager = (IStockManager)Activator.GetObject(typeof(IStockManager), string.Format("{0}/{1}", string.Format(url, port), "stockmanager.soap"));
             superStock = new SuperStock();
 
             zone.Register(stockManager, superStock.Stock);
