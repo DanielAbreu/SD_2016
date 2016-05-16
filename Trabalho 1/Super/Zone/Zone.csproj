@@ -56,6 +56,10 @@
       <Project>{9e0ac227-85f0-4d42-ad9c-1ae1a1105c26}</Project>
       <Name>ISuper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Super\Super.csproj">
+      <Project>{D7613CF5-60CD-4CDF-9A59-D69D4E1F3524}</Project>
+      <Name>Super</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

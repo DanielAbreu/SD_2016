@@ -7,8 +7,10 @@ using System.Xml.Serialization;
 
 namespace Super
 {
+    [Serializable]
     public class SuperStock
     {
+        public StockLoader sl;
         private Item[] _Stock;
         public Item[] Stock
         {
@@ -16,36 +18,44 @@ namespace Super
             {
                 if (_Stock == null)
                 {
-                    _Stock = LoadStock();
+                    _Stock = sl.LoadStock();
                 }
                 return _Stock;
             }
         }
 
-        private string stockPath
+        
+
+        // UMA CLASSE SERIALIZABLE NÃO PODE TER MÉTODOS.
+        // AFETAR OS CAMPOS DE STOCK DE OUTRA MANEIRA
+
+        public class StockLoader
         {
-            get
+            private string stockPath
             {
-                if (ConfigurationManager.AppSettings["StockPath"] == null)
+                get
                 {
-                    throw new ArgumentNullException("Key StockPath not present in App.config");
+                    if (ConfigurationManager.AppSettings["StockPath"] == null)
+                    {
+                        throw new ArgumentNullException("Key StockPath not present in App.config");
+                    }
+                    return ConfigurationManager.AppSettings["StockPath"];
                 }
-                return ConfigurationManager.AppSettings["StockPath"];
+            }
+            public Item[] LoadStock()
+            {
+                Stock stock = null;
+
+                XmlSerializer serializer = new XmlSerializer(typeof(Stock));
+
+                StreamReader reader = new StreamReader(stockPath);
+                stock = (Stock)serializer.Deserialize(reader);
+                reader.Close();
+
+                return stock.Items;
             }
         }
 
-
-        private Item[] LoadStock()
-        {
-            Stock stock = null;
-
-            XmlSerializer serializer = new XmlSerializer(typeof(Stock));
-
-            StreamReader reader = new StreamReader(stockPath);
-            stock = (Stock)serializer.Deserialize(reader);
-            reader.Close();
-
-            return stock.Items;
-        }
+        
     }
 }

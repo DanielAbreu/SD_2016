@@ -24,14 +24,7 @@ namespace Zone
 
         static void Main(string[] args)
         {
-            HttpChannel ch = new HttpChannel(port);
-            ChannelServices.RegisterChannel(ch, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(
-                typeof(Zone),
-                "zone.soap",
-                WellKnownObjectMode.Singleton
-            );
-
+            RemotingConfiguration.Configure("Zone.exe.config", false);
             Console.WriteLine("Waiting Requests on port: "+port);
             Console.ReadLine();
         }

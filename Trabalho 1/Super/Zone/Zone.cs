@@ -1,15 +1,16 @@
 ﻿using ISuper;
 using ISuperInterfaces;
+using Super;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 
 namespace Zone
 {
     public class Zone : MarshalByRefObject, IZone
     {
         private List<IStockManager> managers;
-        private Dictionary<string, List<Item>> stockCache;
         private IZone nextZone;
 
         private int nextZonePort
@@ -27,42 +28,28 @@ namespace Zone
         public Zone()
         {
             managers = new List<IStockManager>();
-            stockCache = new Dictionary<string, List<Item>>();
             nextZone = (IZone)Activator.GetObject(typeof(IZone),
                                                   string.Format("{0}/{1}",
                                                   string.Format("http://localhost:", nextZonePort), "zone"));
         }
 
-        public void Register(IStockManager stockManager, Item[] stock)
+        public void Register(IStockManager stockManager, string[] families)
         {
-            Console.WriteLine("Registed entered");
+            Console.WriteLine("Register entered");
             if (managers.Contains(stockManager))
             {
                 return;
             }
-
+            
             managers.Add(stockManager);
-            foreach (Item it in stock)
-            {
-                if (stockCache.ContainsKey(it.Name))
-                {
+           
 
-                    List<Item> li = stockCache[it.Name];
-                    li.Add(it);
-                    stockCache[it.Name] = li;
-                }
-                else
-                {
-                    stockCache.Add(it.Name, new List<Item> { it });
-                }
-            }
-
-            nextZone.Register(stockManager, stock);
+            nextZone.Register(stockManager, families);
             Console.WriteLine("Successfully Registed the StockManager");
         }
         public void Unregister(IStockManager stockManager)
         {
-            Console.WriteLine("Registed entered");
+            Console.WriteLine("Unregister entered");
             if (!managers.Contains(stockManager))
             {
                 return;
@@ -76,11 +63,27 @@ namespace Zone
 
         public IEnumerable<Item> GetItemStock(string name)
         {
-            if (stockCache.ContainsKey(name))
+            Console.WriteLine("Entered the search for object " + name);
+            int retrieved = 0;
+            foreach(StockManager sm in managers)
             {
-                return stockCache[name];
+                foreach(Item it in sm.stock.Stock)
+                {
+                    if (it.Name.Equals(name))
+                    {
+                        retrieved++;
+                        yield return it;
+                    }
+                }
             }
-            return null; 
+            if (retrieved > 0) Console.WriteLine("Sucessfully retrieved " + retrieved + "items with that name");
+            else Console.WriteLine("Couldn't retrieve any item with that name");
+            yield break;
+        }
+
+        public string isAlive(string n)
+        {
+            return n+"done";
         }
     }
 }

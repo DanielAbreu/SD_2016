@@ -4,14 +4,14 @@ using System.Xml.Serialization;
 
 namespace ISuper
 {
-    [Serializable()]
+    [Serializable]
     public class Item
     {
-        [XmlElement()]
+       [XmlElement()]
         public int SuperID { get; set; }
         [XmlElement()]
         public string Name {get; set;}
-        [XmlElement()]
+       [XmlElement()]
         public int Qtd { get; set; }
     }
 

@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using ISuper;
 using System.Configuration;
 using ISuperInterfaces;
+using static Super.SuperStock;
 
 namespace Super
 {
     public partial class SuperGI : Form
     {
-        private IStockManager stockManager;
+        IStockManager stockManager;
         private IZone zone;
         private SuperStock superStock;
         private string _url;
@@ -52,12 +53,17 @@ namespace Super
                 MessageBoxDefaultButton.Button1);
                 return;
             }
-
-            zone = (IZone)Activator.GetObject(typeof(IZone), string.Format("{0}/{1}", string.Format(url, port), "zone.soap"));
-            stockManager = new StockManager();
+            MessageBox.Show(port);
+            zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
             superStock = new SuperStock();
+            StockLoader sl = new StockLoader();
+            superStock.sl = sl;
+            stockManager = new StockManager(superStock);
 
-            zone.Register(stockManager, superStock.Stock);
+            string[] families = null; // CARREGAR FAMILIAS DE PRODUTOS PARA ESTE ARRAY
+            
+            //MessageBox.Show(zone.isAlive("ola"));
+            zone.Register(stockManager, families);
 
             MessageBox.Show(string.Format("Super registado na zona {0}", port),
                 "Super registado",

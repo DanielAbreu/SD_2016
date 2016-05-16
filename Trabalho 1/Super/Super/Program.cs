@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace Super
@@ -11,6 +12,7 @@ namespace Super
         [STAThread]
         static void Main()
         {
+            RemotingConfiguration.Configure("Super.exe.config", false);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SuperGI());

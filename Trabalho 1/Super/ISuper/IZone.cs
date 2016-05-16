@@ -6,21 +6,21 @@ namespace ISuperInterfaces
 {
     public interface IStockManager
     {
+        string IsAlive(string i);
+        IEnumerable<Item> GetSuperStock();
 
     }
 
     public interface IZone
     {
-        void Register(IStockManager stockManager, Item[] stock);
+        string isAlive(string n);
+        void Register(IStockManager stockManager, string[] families);
 
         void Unregister(IStockManager stockManager);
 
         IEnumerable<Item> GetItemStock(string item);
     }
 
-    [Serializable]
-    public class StockManager : IStockManager
-    {
-        
-    }
+    
+    
 }
