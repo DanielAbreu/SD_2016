@@ -4,40 +4,48 @@
         <SuperID>1</SuperID>
         <Name>Atum</Name>
         <Qtd>10</Qtd>
+        <Family>Peixes</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Batatas</Name>
         <Qtd>15</Qtd>
+        <Family>Legumes</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Arroz</Name>
         <Qtd>4</Qtd>
+        <Family>Cereais</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Carne de Novilho</Name>
         <Qtd>30</Qtd>
+        <Family>Carne</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Peixe Espada</Name>
         <Qtd>13</Qtd>
+        <Family>Peixes</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Sardinhas</Name>
         <Qtd>5</Qtd>
+        <Family>Peixes</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Esparguete</Name>
         <Qtd>45</Qtd>
+        <Family>Massas</Family>
     </Item>
     <Item>
         <SuperID>1</SuperID>
         <Name>Tomate</Name>
         <Qtd>58</Qtd>
+        <Family>Legumes</Family>
     </Item>
 </Stock>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Xml.Serialization;
+using System.Linq;
 
 namespace Super
 {
@@ -11,6 +12,12 @@ namespace Super
     public class SuperStock
     {
         public StockLoader sl;
+        public string[] Families 
+        {   get
+            {
+                return Stock.Select(s => s.Family).ToArray();
+            }
+        }
         private Item[] _Stock;
         public Item[] Stock
         {
@@ -22,14 +29,7 @@ namespace Super
                 }
                 return _Stock;
             }
-        }
-
-        
-
-
-       
-
-        
+        }   
     }
     public class StockLoader
     {
