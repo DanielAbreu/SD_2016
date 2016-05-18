@@ -42,9 +42,9 @@ namespace Zone
             }
             
             managers.Add(stockManager);
-           
 
-            nextZone.Register(stockManager, families);
+            UpdateManagers(stockManager);
+            //nextZone.Register(stockManager, families);
             Console.WriteLine("Successfully Registed the StockManager");
         }
         public void Unregister(IStockManager stockManager)
@@ -84,6 +84,15 @@ namespace Zone
         public string isAlive(string n)
         {
             return n+"done";
+        }
+
+        public void UpdateManagers(IStockManager sm)
+        {
+            foreach(StockManager manager in managers)
+            {
+                if (manager.managers.Contains(sm)) continue;
+                manager.managers.Add(sm);
+            }
         }
     }
 }

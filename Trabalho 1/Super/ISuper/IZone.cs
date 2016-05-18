@@ -6,6 +6,7 @@ namespace ISuperInterfaces
 {
     public interface IStockManager
     {
+
         string IsAlive(string i);
         IEnumerable<Item> GetSuperStock();
 
@@ -14,6 +15,7 @@ namespace ISuperInterfaces
     public interface IZone
     {
         string isAlive(string n);
+        void UpdateManagers(IStockManager sm);
         void Register(IStockManager stockManager, string[] families);
 
         void Unregister(IStockManager stockManager);

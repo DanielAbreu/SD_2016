@@ -10,11 +10,14 @@ namespace Super
 {
     public class StockManager : MarshalByRefObject, IStockManager
     {
+        public List<IStockManager> managers;
         public SuperStock stock;
         public StockManager(SuperStock st)
         {
             this.stock = st;
         }
+
+     
 
         public IEnumerable<Item> GetSuperStock()
         {
