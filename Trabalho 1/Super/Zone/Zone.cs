@@ -44,7 +44,7 @@ namespace Zone
             managers.Add(stockManager);
 
             UpdateManagers(stockManager);
-            //nextZone.Register(stockManager, families);
+            nextZone.Register(stockManager, families);
             Console.WriteLine("Successfully Registed the StockManager");
         }
         public void Unregister(IStockManager stockManager)

@@ -37,7 +37,12 @@ namespace Super
         }
         public SuperGI()
         {
+            superStock = new SuperStock();
+            StockLoader sl = new StockLoader();
+            superStock.sl = sl;
+            stockManager = new StockManager(superStock);
             InitializeComponent();
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -55,10 +60,6 @@ namespace Super
             }
             MessageBox.Show(port);
             zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
-            superStock = new SuperStock();
-            StockLoader sl = new StockLoader();
-            superStock.sl = sl;
-            stockManager = new StockManager(superStock);
 
             string[] families = null; // CARREGAR FAMILIAS DE PRODUTOS PARA ESTE ARRAY
             
