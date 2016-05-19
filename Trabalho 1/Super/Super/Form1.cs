@@ -58,13 +58,13 @@ namespace Super
                 MessageBoxDefaultButton.Button1);
                 return;
             }
-            MessageBox.Show(port);
             zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
 
-            string[] families = null; // CARREGAR FAMILIAS DE PRODUTOS PARA ESTE ARRAY
+            string[] families = new string[] { "fruta", "legumes" }; // CARREGAR FAMILIAS DE PRODUTOS PARA ESTE ARRAY
             
             //MessageBox.Show(zone.isAlive("ola"));
             zone.Register(stockManager, families);
+            
 
             MessageBox.Show(string.Format("Super registado na zona {0}", port),
                 "Super registado",

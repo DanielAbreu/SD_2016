@@ -40,10 +40,11 @@ namespace Zone
             {
                 return;
             }
-            
+            Console.WriteLine("Chegou aqui");
             managers.Add(stockManager);
-
+            Console.WriteLine("CHegou aqui 2");
             UpdateManagers(stockManager);
+            Console.WriteLine("Chegou aqui 3");
             nextZone.Register(stockManager, families);
             Console.WriteLine("Successfully Registed the StockManager");
         }
@@ -88,10 +89,16 @@ namespace Zone
 
         public void UpdateManagers(IStockManager sm)
         {
+            
             foreach(StockManager manager in managers)
             {
                 if (manager.managers.Contains(sm)) continue;
-                manager.managers.Add(sm);
+                Console.WriteLine("Passou o IF");
+                List<StockManager> li = manager.managers.ToList();
+                Console.WriteLine("Instanciou a lista");
+                li.Add((StockManager)sm);
+                Console.WriteLine("Adicionou sm");
+                manager.managers = li.ToArray();
             }
         }
     }
