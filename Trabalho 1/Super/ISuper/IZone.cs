@@ -8,19 +8,22 @@ namespace ISuperInterfaces
     {
 
         string IsAlive(string i);
+
         IEnumerable<Item> GetSuperStock();
+
+        void Add(IStockManager sm);
+
+        void Remove(IStockManager sm);
 
     }
 
     public interface IZone
     {
         string isAlive(string n);
-        void UpdateManagers(IStockManager sm);
-        void Register(IStockManager stockManager, string[] families);
+
+        void Register(IStockManager stockManager);
 
         void Unregister(IStockManager stockManager);
-
-        IEnumerable<Item> GetItemStock(string item);
     }
 
     

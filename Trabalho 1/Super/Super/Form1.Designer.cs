@@ -40,6 +40,7 @@
             this.textBoxItem = new System.Windows.Forms.TextBox();
             this.buttonFindStock = new System.Windows.Forms.Button();
             this.labelItems = new System.Windows.Forms.Label();
+            this.columnHeaderFamily = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // buttonRegister
@@ -83,10 +84,11 @@
             this.listViewStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderSuperID,
             this.columnHeaderItem,
-            this.columnHeaderQty});
+            this.columnHeaderQty,
+            this.columnHeaderFamily});
             this.listViewStock.Location = new System.Drawing.Point(284, 53);
             this.listViewStock.Name = "listViewStock";
-            this.listViewStock.Size = new System.Drawing.Size(310, 289);
+            this.listViewStock.Size = new System.Drawing.Size(408, 289);
             this.listViewStock.TabIndex = 4;
             this.listViewStock.UseCompatibleStateImageBehavior = false;
             this.listViewStock.View = System.Windows.Forms.View.Details;
@@ -110,15 +112,15 @@
             this.labelItem.AutoSize = true;
             this.labelItem.Location = new System.Drawing.Point(287, 351);
             this.labelItem.Name = "labelItem";
-            this.labelItem.Size = new System.Drawing.Size(88, 13);
+            this.labelItem.Size = new System.Drawing.Size(146, 13);
             this.labelItem.TabIndex = 5;
-            this.labelItem.Text = "Insira um produto";
+            this.labelItem.Text = "Insira uma familia de produtos";
             // 
             // textBoxItem
             // 
-            this.textBoxItem.Location = new System.Drawing.Point(384, 348);
+            this.textBoxItem.Location = new System.Drawing.Point(442, 348);
             this.textBoxItem.Name = "textBoxItem";
-            this.textBoxItem.Size = new System.Drawing.Size(200, 20);
+            this.textBoxItem.Size = new System.Drawing.Size(174, 20);
             this.textBoxItem.TabIndex = 6;
             // 
             // buttonFindStock
@@ -140,11 +142,16 @@
             this.labelItems.TabIndex = 8;
             this.labelItems.Text = "Produtos Disponiveis";
             // 
+            // columnHeaderFamily
+            // 
+            this.columnHeaderFamily.Text = "Familia";
+            this.columnHeaderFamily.Width = 98;
+            // 
             // SuperGI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 447);
+            this.ClientSize = new System.Drawing.Size(717, 447);
             this.Controls.Add(this.labelItems);
             this.Controls.Add(this.buttonFindStock);
             this.Controls.Add(this.textBoxItem);
@@ -175,6 +182,7 @@
         private System.Windows.Forms.ColumnHeader columnHeaderSuperID;
         private System.Windows.Forms.ColumnHeader columnHeaderItem;
         private System.Windows.Forms.ColumnHeader columnHeaderQty;
+        private System.Windows.Forms.ColumnHeader columnHeaderFamily;
     }
 }
 

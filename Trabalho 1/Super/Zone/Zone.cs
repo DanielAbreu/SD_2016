@@ -33,22 +33,22 @@ namespace Zone
                                                   string.Format("http://localhost:", nextZonePort), "zone"));
         }
 
-        public void Register(IStockManager stockManager, string[] families)
+        public void Register(IStockManager stockManager)
         {
             Console.WriteLine("Register entered");
             if (managers == null) managers = new List<IStockManager>();
-            nextZone = (IZone)Activator.GetObject(typeof(IZone),
-                                                  string.Format("{0}/{1}",
-                                                  string.Format("http://localhost:", nextZonePort), "zone"));
+            
             if (managers.Contains(stockManager))
             {
                 return;
             }
             managers.Add(stockManager);
-            UpdateManagers(stockManager);
-            nextZone.Register(stockManager, families);
+            AddToManagers(stockManager);
+            Console.WriteLine(nextZone.isAlive("vive"));
+            nextZone.Register(stockManager);
             Console.WriteLine("Successfully Registed the StockManager");
         }
+
         public void Unregister(IStockManager stockManager)
         {
             Console.WriteLine("Unregister entered");
@@ -58,29 +58,9 @@ namespace Zone
             }
 
             managers.Remove(stockManager);
-
+            RemoveFromManagers(stockManager);
             nextZone.Unregister(stockManager);
             Console.WriteLine("Successfully Unregisted the StockManager");
-        }
-
-        public IEnumerable<Item> GetItemStock(string name)
-        {
-            Console.WriteLine("Entered the search for object " + name);
-            int retrieved = 0;
-            foreach(StockManager sm in managers)
-            {
-                foreach(Item it in sm.stock.Stock)
-                {
-                    if (it.Name.Equals(name))
-                    {
-                        retrieved++;
-                        yield return it;
-                    }
-                }
-            }
-            if (retrieved > 0) Console.WriteLine("Sucessfully retrieved " + retrieved + "items with that name");
-            else Console.WriteLine("Couldn't retrieve any item with that name");
-            yield break;
         }
 
         public string isAlive(string n)
@@ -88,16 +68,22 @@ namespace Zone
             return n+"done";
         }
 
-        public void UpdateManagers(IStockManager sm)
+        private void AddToManagers(IStockManager sm)
         {
-            
             foreach(StockManager manager in managers)
             {
-                if (manager.managers.Contains(sm)) continue;
-                List<StockManager> li = manager.managers.ToList();
-                li.Add((StockManager)sm);
-                manager.managers = li.ToArray();
+                manager.Add(sm);
             }
+            Console.WriteLine("StockManager added to Managers");
+        }
+
+        private void RemoveFromManagers(IStockManager sm)
+        {
+            foreach (StockManager manager in managers)
+            {
+                manager.Remove(sm);
+            }
+            Console.WriteLine("StockManager removed from Managers");
         }
     }
 }

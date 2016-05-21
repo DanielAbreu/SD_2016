@@ -5,12 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ISuper;
 using System.Configuration;
 using ISuperInterfaces;
-using static Super.SuperStock;
 
 namespace Super
 {
@@ -61,10 +59,7 @@ namespace Super
             }
             zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
 
-            string[] families = superStock.Families;
-            
-            //MessageBox.Show(zone.isAlive("ola"));
-            zone.Register(stockManager, families);
+            zone.Register(stockManager);
             
 
             MessageBox.Show(string.Format("Super registado na zona {0}", port),
@@ -104,13 +99,12 @@ namespace Super
                 return;
             }
 
-            localStock = zone.GetItemStock(itemToSearch);
+            localStock = stockManager.GetStockFromFamilies(itemToSearch);
 
             if (localStock != null)
             {
-                listViewStock.Items[0].SubItems.AddRange(localStock.Select(s => s.SuperID.ToString()).ToArray());
-                listViewStock.Items[1].SubItems.AddRange(localStock.Select(s => s.Name).ToArray());
-                listViewStock.Items[2].SubItems.AddRange(localStock.Select(s => s.Qtd.ToString()).ToArray());
+                ClearListView();
+                GetListViewItems(localStock);           
             }
             else
             {
@@ -121,6 +115,27 @@ namespace Super
                 MessageBoxDefaultButton.Button1);
                 return;
             }
+        }
+
+        private void ClearListView()
+        {
+            foreach(ListViewItem item in listViewStock.Items)
+            {
+                listViewStock.Items.Remove(item);
+            }
+        }
+
+        private void GetListViewItems(IEnumerable<Item> localStock)
+        {
+            foreach (var item in localStock)
+            {
+                ListViewItem lt = new ListViewItem(item.SuperID.ToString());
+                lt.SubItems.Add(item.Name);
+                lt.SubItems.Add(item.Qtd.ToString());
+                lt.SubItems.Add(item.Family);
+                listViewStock.Items.Add(lt);
+            }
+            
         }
     }
 }
