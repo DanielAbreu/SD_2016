@@ -36,15 +36,16 @@ namespace Zone
         public void Register(IStockManager stockManager, string[] families)
         {
             Console.WriteLine("Register entered");
+            if (managers == null) managers = new List<IStockManager>();
+            nextZone = (IZone)Activator.GetObject(typeof(IZone),
+                                                  string.Format("{0}/{1}",
+                                                  string.Format("http://localhost:", nextZonePort), "zone"));
             if (managers.Contains(stockManager))
             {
                 return;
             }
-            Console.WriteLine("Chegou aqui");
             managers.Add(stockManager);
-            Console.WriteLine("CHegou aqui 2");
             UpdateManagers(stockManager);
-            Console.WriteLine("Chegou aqui 3");
             nextZone.Register(stockManager, families);
             Console.WriteLine("Successfully Registed the StockManager");
         }
@@ -93,11 +94,8 @@ namespace Zone
             foreach(StockManager manager in managers)
             {
                 if (manager.managers.Contains(sm)) continue;
-                Console.WriteLine("Passou o IF");
                 List<StockManager> li = manager.managers.ToList();
-                Console.WriteLine("Instanciou a lista");
                 li.Add((StockManager)sm);
-                Console.WriteLine("Adicionou sm");
                 manager.managers = li.ToArray();
             }
         }

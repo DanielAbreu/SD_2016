@@ -16,7 +16,7 @@ namespace Super
 {
     public partial class SuperGI : Form
     {
-        IStockManager stockManager;
+        StockManager stockManager;
         private IZone zone;
         private SuperStock superStock;
         private string _url;
@@ -41,6 +41,7 @@ namespace Super
             StockLoader sl = new StockLoader();
             superStock.sl = sl;
             stockManager = new StockManager(superStock);
+            stockManager.managers = new StockManager[] { };
             InitializeComponent();
 
         }
@@ -60,7 +61,7 @@ namespace Super
             }
             zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
 
-            string[] families = new string[] { "fruta", "legumes" }; // CARREGAR FAMILIAS DE PRODUTOS PARA ESTE ARRAY
+            string[] families = superStock.Families;
             
             //MessageBox.Show(zone.isAlive("ola"));
             zone.Register(stockManager, families);
