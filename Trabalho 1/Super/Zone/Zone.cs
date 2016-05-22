@@ -28,9 +28,7 @@ namespace Zone
         public Zone()
         {
             managers = new List<IStockManager>();
-            nextZone = (IZone)Activator.GetObject(typeof(IZone),
-                                                  string.Format("{0}/{1}",
-                                                  string.Format("http://localhost:", nextZonePort), "zone"));
+            nextZone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + nextZonePort + "/zone.soap");
         }
 
         public void Register(IStockManager stockManager)
@@ -44,7 +42,6 @@ namespace Zone
             }
             managers.Add(stockManager);
             AddToManagers(stockManager);
-            Console.WriteLine(nextZone.isAlive("vive"));
             nextZone.Register(stockManager);
             Console.WriteLine("Successfully Registed the StockManager");
         }
@@ -63,16 +60,12 @@ namespace Zone
             Console.WriteLine("Successfully Unregisted the StockManager");
         }
 
-        public string isAlive(string n)
-        {
-            return n+"done";
-        }
-
         private void AddToManagers(IStockManager sm)
         {
             foreach(StockManager manager in managers)
             {
                 manager.Add(sm);
+                sm.Add(manager);
             }
             Console.WriteLine("StockManager added to Managers");
         }
@@ -82,6 +75,7 @@ namespace Zone
             foreach (StockManager manager in managers)
             {
                 manager.Remove(sm);
+                sm.Remove(manager);
             }
             Console.WriteLine("StockManager removed from Managers");
         }
