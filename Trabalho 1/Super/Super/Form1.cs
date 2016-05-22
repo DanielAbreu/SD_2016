@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ISuper;
 using System.Configuration;
 using ISuperInterfaces;
+using System.Net;
 
 namespace Super
 {
@@ -59,14 +60,24 @@ namespace Super
             }
             zone = (IZone)Activator.GetObject(typeof(IZone), "http://localhost:" + port + "/zone.soap");
 
-            zone.Register(stockManager);
-            
+            string text, title = String.Empty;
+            try 
+            {
+                zone.Register(stockManager);
+                text = string.Format("Super registado na zona {0}", port);
+                title = "Super registado";
+            }
+            catch (WebException ex)
+            {
+                text = "Zona não disponível";
+                title = "Zona não disponível";
+            }
 
-            MessageBox.Show(string.Format("Super registado na zona {0}", port),
-                "Super registado",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1);
+            MessageBox.Show(text,
+            title,
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
         }
 
         private void buttonUnregister_Click(object sender, EventArgs e)
@@ -81,6 +92,11 @@ namespace Super
                 return;
             }
 
+            MessageBox.Show("Retirado o registo na zona",
+               "Operação sucedida",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Exclamation,
+               MessageBoxDefaultButton.Button1);
             zone.Unregister(stockManager);
         }
 

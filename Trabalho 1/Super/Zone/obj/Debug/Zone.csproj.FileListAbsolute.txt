@@ -24,3 +24,13 @@ C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\bin\Debug\Super.pdb
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.csprojResolveAssemblyReference.cache
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.exe
 C:\Users\Jo\Desktop\SD\repo\Trabalho 1\Super\Zone\obj\Debug\Zone.pdb
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.exe.config
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.exe
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Zone.pdb
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.dll
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Super.exe
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\ISuper.pdb
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\bin\Debug\Super.pdb
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.exe
+C:\Users\Lucas\Desktop\SD\SD_2016\Trabalho 1\Super\Zone\obj\Debug\Zone.pdb

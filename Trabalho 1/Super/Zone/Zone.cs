@@ -1,10 +1,8 @@
-﻿using ISuper;
-using ISuperInterfaces;
+﻿using ISuperInterfaces;
 using Super;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
 
 namespace Zone
 {
@@ -34,10 +32,14 @@ namespace Zone
         public void Register(IStockManager stockManager)
         {
             Console.WriteLine("Register entered");
-            if (managers == null) managers = new List<IStockManager>();
-            
+            if (managers == null)
+            {
+                managers = new List<IStockManager>();
+            }
+
             if (managers.Contains(stockManager))
             {
+                Console.WriteLine("StockManager already registered in this zone");
                 return;
             }
             managers.Add(stockManager);
@@ -51,6 +53,7 @@ namespace Zone
             Console.WriteLine("Unregister entered");
             if (!managers.Contains(stockManager))
             {
+                Console.WriteLine("Stockmanager is not registered in this area");
                 return;
             }
 
