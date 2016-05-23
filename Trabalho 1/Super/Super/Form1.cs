@@ -91,13 +91,24 @@ namespace Super
                 MessageBoxDefaultButton.Button1);
                 return;
             }
+            string text, title = String.Empty;
+            try
+            {
+                zone.Unregister(stockManager);
+                text = string.Format("Unregister do Super completo.");
+                title = "Unregister Completo";
+            }
+            catch (WebException ex)
+            {
+                text = "Zona não disponível";
+                title = "Zona não disponível";
+            }
 
-            MessageBox.Show("Retirado o registo na zona",
-               "Operação sucedida",
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Exclamation,
-               MessageBoxDefaultButton.Button1);
-            zone.Unregister(stockManager);
+            MessageBox.Show(text,
+            title,
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
         }
 
         private void buttonFindStock_Click(object sender, EventArgs e)
@@ -117,7 +128,7 @@ namespace Super
 
             localStock = stockManager.GetStockFromFamilies(itemToSearch);
 
-            if (localStock != null)
+            if (localStock.Count()>0)
             {
                 ClearListView();
                 GetListViewItems(localStock);           
