@@ -44,7 +44,7 @@ namespace Zone
             }
             managers.Add(stockManager);
             AddToManagers(stockManager);
-            nextZone.Register(stockManager);
+            if(nextZonePort!=0)nextZone.Register(stockManager);
             Console.WriteLine("Successfully Registed the StockManager");
         }
 
@@ -59,7 +59,7 @@ namespace Zone
 
             managers.Remove(stockManager);
             RemoveFromManagers(stockManager);
-            nextZone.Unregister(stockManager);
+            if(nextZonePort!=0)nextZone.Unregister(stockManager);
             Console.WriteLine("Successfully Unregisted the StockManager");
         }
 
